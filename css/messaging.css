@@ -17,3 +17,32 @@
     width: 100px;
     height: 100px;
 }
+
+/* header */
+.conversation .conversation-header {
+    display: flex;
+    align-items: center;
+}
+
+.conversation .conversation-header .conversation-info {
+    margin-left: 10px;
+}
+
+.message-list {
+    margin-top: 10px;
+}
+ 
+.toggle-messages {
+    display: block;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #073c74;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.toggle-messages:hover {
+    background-color: #0056b3;
+}
