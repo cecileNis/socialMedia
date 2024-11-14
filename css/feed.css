@@ -71,3 +71,18 @@
     color: #fff;
     cursor: pointer;
 }
+
+/* Post actions */
+.post-actions .reaction-btn {
+    display: inline-flex;
+    background-color: transparent;
+    box-shadow: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px 0 15px;
+}
+.post-actions .reaction-btn img {
+    width: 34px;
+    height: 34px;
+    vertical-align: middle;
+}

@@ -75,6 +75,25 @@ function createPostElement(post) {
     const postActionsElement = document.createElement('div');
     postActionsElement.classList.add('post-actions');
 
+    // Reaction post
+    const reactions = post.reactions || { like: 0, dislike: 0, love: 0 };
+    const reactionTypes = ['like', 'dislike', 'love'];
+
+    // Create reaction buttons
+    reactionTypes.forEach(reaction => {
+        const button = document.createElement('button');
+        button.classList.add('reaction-btn');
+        button.dataset.postId = post.id;
+        button.dataset.reaction = reaction;
+        button.innerHTML = `${getReactionEmoji(reaction)} ${reactions[reaction]}`;
+        button.addEventListener('click', handleReaction);
+        // Check user already reacted
+        if (post.userReactions && post.userReactions.includes(reaction)) {
+        button.classList.add('reacted');
+        }
+        postActionsElement.appendChild(button);
+    });
+
     // Add info, content, action
     postElement.appendChild(userInfoElement); 
     postElement.appendChild(postContentElement);
@@ -100,6 +119,62 @@ function showFullScreen(imageUrl) {
     fullScreenElement.appendChild(closeButtonElement);
     document.body.appendChild(fullScreenElement);
 }
+
+// reaction emoji
+function getReactionEmoji(reaction) {
+    switch (reaction) {
+        case 'like':
+        return '<img src="assets/img/feed/like.png" alt="Like" class="icon-like" />';
+        case 'dislike':
+        return '<img src="assets/img/feed/dislike.png" alt="Dislike" class="icon-dislike" />';
+        case 'love':
+        return '<img src="assets/img/feed/love.png" alt="Love" class="icon-love" />';
+        default:
+        return '';
+    }
+}
+// Handle reaction interaction
+function handleReaction(event) {
+    const button = event.target.closest('.reaction-btn');
+    if (!button) return; 
+
+    const postId = button.dataset.postId;
+    const reaction = button.dataset.reaction;
+
+    if (button.classList.contains('reacted')) {
+        button.classList.remove('reacted');
+        updateReactionCount(postId, reaction, -1);
+    } else {
+        button.classList.add('reacted');
+        updateReactionCount(postId, reaction, 1);
+    }
+}
+
+// Update reaction count
+function updateReactionCount(postId, reaction, count) {
+    loadFeedData().then(posts => {
+        const post = posts.find(post => post.id === postId);
+        if (post.reactions) {
+            post.reactions[reaction] += count;
+            // Update user reaction
+            if (!post.userReactions) {
+                post.userReactions = [];
+            }
+            if (count > 0) {
+                post.userReactions.push(reaction);
+            } else {
+                const index = post.userReactions.indexOf(reaction);
+                if (index > -1) {
+                    post.userReactions.splice(index, 1);
+                }
+            }
+            displayPosts(posts);
+            // data in localStorage
+            localStorage.setItem('feedData', JSON.stringify(posts));
+        }
+    });
+}
+
 // Initialization and display
 export function displayFeed() {
     loadFeedData().then(posts => {
