@@ -1,0 +1,109 @@
+[
+    {
+        "id": "1",
+        "user": {
+            "name": "Martin Dupont",
+            "profilePicture": "martin.jpeg"
+        },
+        "content": {
+            "text": "Quel beau coucher de soleil aujourd'hui ! 🌅",
+            "image": "sunset.jpg"
+        },
+        "reactions": {
+            "like": 0,
+            "dislike": 0,
+            "love": 0
+        },
+        "comments": [
+            {
+                "id": "c1",
+                "user": "Sophie Giraf",
+                "text": "Superbe photo !",
+                "replies": [
+                    {
+                        "id": "r1",
+                        "user": "Martin Dupont",
+                        "text": "Merci Sophie ! 😊"
+                    }
+                ]
+            },
+            {
+                "id": "c2",
+                "user": "Alex Richard",
+                "text": "Ça donne envie de voyager !",
+                "replies": []
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "user": {
+            "name": "Jean Petit",
+            "profilePicture": "jean.jpeg"
+        },
+        "content": {
+            "text": "Nouvelle recette testée aujourd'hui : un gâteau au chocolat sans gluten et sans sucre ! 🍫👌",
+            "image": "chocolate_cake.jpg"
+        },
+        "reactions": {
+            "like": 0,
+            "dislike": 0,
+            "love": 0
+        },
+        "comments": []
+    },
+    {
+        "id": "3",
+        "user": {
+            "name": "Clara Dubois",
+            "profilePicture": "clara.jpeg"
+        },
+        "content": {
+            "text": "Lecture du jour : 'Sapiens' de Yuval Noah Harari. Fascinant et instructif 📚!",
+            "image": null
+        },
+        "reactions": {
+            "like": 0,
+            "dislike": 0,
+            "love": 0
+        },
+        "comments": [
+            {
+                "id": "c3",
+                "user": "Louis Bernard",
+                "text": "J'ai adoré ce livre aussi !",
+                "replies": [
+                    {
+                    "id": "r2",
+                    "user": "Clara Dubois",
+                    "text": "C'est vraiment captivant !"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "user": {
+            "name": "Lyse Lefèvre",
+            "profilePicture": "lyse.jpeg"
+        },
+        "content": {
+            "text": "Première course de 10 km depuis longtemps ! 🏃‍♂️💪 #sport",
+            "image": "running.jpg"
+        },
+        "reactions": {
+            "like": 0,
+            "dislike": 0,
+            "love": 0
+        },
+        "comments": [
+            {
+                "id": "c4",
+                "user": "Julie",
+                "text": "Bravo ! La prochaine fois, vise les 15 km !",
+                "replies": []
+            }
+        ]
+    }
+]
