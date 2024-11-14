@@ -1,0 +1,14 @@
+/* Resetting Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Basic Bodysuit Styles */
+body{
+    background-color: #e0e0e0;
+    color: #333;
+    line-height: 1.6;
+}
