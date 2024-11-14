@@ -72,6 +72,11 @@ function loadConversation(conversationId) {
     // Finds conversation in local data
     const conversation = conversationsData.find(conv => conv.id === conversationId);
     if (conversation) {
+        // Load messages from `localStorage`
+        const savedMessages = localStorage.getItem(`conversation-${conversationId}`);
+        if (savedMessages) {
+            conversation.messages = JSON.parse(savedMessages);
+        }
         conversation.messages.forEach(message => renderMessage(message, conversationContainer));
     }
     // Update button text
@@ -130,6 +135,8 @@ function sendMessage(conversationId) {
     if (conversation) {
         conversation.messages.push(newMessage);  // Add new message
         conversation.lastMessageTimestamp = newMessage.timestamp;
+        // Save messages to `localStorage`
+        localStorage.setItem(`conversation-${conversationId}`, JSON.stringify(conversation.messages))
     }
     // update the list
     updateConversationsList();
