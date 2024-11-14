@@ -1,4 +1,5 @@
 import { displayFeed } from './feed.js';
+import { loadConversations } from './messaging.js';
 
 function showPage(pageId) {
   const sections = document.querySelectorAll('.page');
@@ -14,6 +15,9 @@ function handleNavigation(event) {
     if (target.matches('#feedLink')) {
         showPage('feed');
         displayFeed(); // Loads and displays news feed
+    } else if (target.matches('#messagingLink')) {
+        showPage('messaging');
+        loadConversations(); // Load conversations
     }
 }
 

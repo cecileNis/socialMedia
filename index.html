@@ -7,12 +7,14 @@
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/menu.css">
         <link rel="stylesheet" href="css/feed.css">
+        <link rel="stylesheet" href="css/messaging.css">
     </head>
     <body>
         <header class="header">
             <nav class="navbar">
                 <ul>
                     <li><a href="#feed" id="feedLink">Feed</a></li>
+                    <li><a href="#messaging" id="messagingLink">Messagerie</a></li>
                 </ul>
             </nav>
         </header>
@@ -21,8 +23,13 @@
                 <h2>Fil d'Actualités</h2>
                 <div class="posts-container"></div>
             </section>
+            <section id="messaging" class="page">
+                <h2>Messagerie</h2>
+                <div id="conversations"></div>
+            </section> 
         </main>
         <script src="js/app.js" type="module"></script>
         <script src="js/feed.js" type="module"></script>
+        <script src="js/messaging.js" type="module"></script>
     </body>
 </html>

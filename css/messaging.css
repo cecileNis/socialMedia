@@ -1,0 +1,19 @@
+#messaging{
+    background-color: #fbfbfb;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1), -4px -4px 12px rgba(255, 255, 255, 0.6);
+    margin: 0 10px 0 10px;
+    padding: 5px;
+}
+
+.conversation{
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.conversation .profile-pic{
+    width: 100px;
+    height: 100px;
+}

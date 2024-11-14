@@ -1,0 +1,48 @@
+{
+    "conversations": [
+        {
+            "id": 1,
+            "participants": [
+                {
+                    "name": "Audrey Dupont",
+                    "profilePicture": "audrey.jpeg"
+                }
+            ],
+            "messages": [
+                {
+                    "sender": "Audrey Dupont",
+                    "text": "Salut ! Comment ça va ?",
+                    "timestamp": "2024-11-08T09:00:00"
+                },
+                {
+                    "sender": "Moi",
+                    "text": "Ça va bien, merci ! Et toi ?",
+                    "timestamp": "2024-11-08T09:10:00"
+                },
+                {
+                    "sender": "Audrey Dupont",
+                    "text": "Ça va super, merci :)",
+                    "timestamp": "2024-11-08T09:15:00"
+                }
+            ],
+            "lastMessageTimestamp": "2024-11-08T09:15:00"
+        },
+        {
+            "id": 2,
+            "participants": [
+                {
+                    "name": "Carlos Rossi",
+                    "profilePicture": "carlos.jpeg"
+                }
+            ],
+            "messages": [
+                {
+                    "sender": "Carlos Rossi",
+                    "text": "Hey, as-tu vu le dernier film de la série ?",
+                    "timestamp": "2024-11-07T18:30:00"
+                }
+            ],
+            "lastMessageTimestamp": "2024-11-07T18:30:00"
+        }
+    ]
+}
