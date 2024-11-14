@@ -86,3 +86,48 @@
     height: 34px;
     vertical-align: middle;
 }
+
+.post-actions .actions-input button {
+    padding: 5px 10px;
+    background-color: #024704;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    margin-left: 10px;
+}
+  
+.post-actions .actions-input button:hover {
+    background-color: #4CAF50;
+}
+
+/* Comments and replies style */
+.comment-or-reply {
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+/* Specific style for answers */
+.comment-or-reply .replies .comment-or-reply {
+    margin-left: 20px; /* Shift of responses */
+    font-style: italic;
+}
+
+/* Space between buttons and text fields */
+.comment-or-reply input[type="text"] {
+    margin-right: 10px;
+}
+
+.comment-or-reply button {
+    background-color: #024704;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.comment-or-reply button:hover {
+    background-color: #45a049;
+}

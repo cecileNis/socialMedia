@@ -94,10 +94,38 @@ function createPostElement(post) {
         postActionsElement.appendChild(button);
     });
 
+    // Create comment input and button
+    const commentInputElement = document.createElement('input');
+    commentInputElement.type = 'text';
+    commentInputElement.placeholder = 'Ajouter un commentaire...';
+  
+    const commentButtonElement = document.createElement('button');
+    commentButtonElement.textContent = 'Commenter';
+    commentButtonElement.addEventListener('click', () => handleComment(post.id, commentInputElement.value));
+  
+    const commentInputContainer = document.createElement('div');
+    commentInputContainer.classList.add('actions-input');
+    commentInputContainer.appendChild(commentInputElement);
+    commentInputContainer.appendChild(commentButtonElement);
+  
+    postActionsElement.appendChild(commentInputContainer);
+  
+    const postCommentsElement = document.createElement('div');
+    postCommentsElement.classList.add('post-comments');
+  
+    // Create comment elements
+    if (post.comments) {
+        post.comments.forEach(comment => {
+            const commentElement = createCommentOrReplyElement(comment);
+            postCommentsElement.appendChild(commentElement);
+        });
+    }
+
     // Add info, content, action
     postElement.appendChild(userInfoElement); 
     postElement.appendChild(postContentElement);
     postElement.appendChild(postActionsElement);
+    postElement.appendChild(postCommentsElement);
   
     return postElement;
 }
@@ -172,6 +200,105 @@ function updateReactionCount(postId, reaction, count) {
             // data in localStorage
             localStorage.setItem('feedData', JSON.stringify(posts));
         }
+    });
+}
+
+// Create HTML element for each comment or reply
+function createCommentOrReplyElement(commentOrReply) {
+    const element = document.createElement('div');
+    element.classList.add('comment-or-reply');
+  
+    const userElement = document.createElement('span');
+    userElement.classList.add('user');
+    userElement.textContent = commentOrReply.user;
+  
+    const textElement = document.createElement('p');
+    textElement.classList.add('text');
+    textElement.textContent = commentOrReply.text;
+  
+    const repliesElement = document.createElement('div');
+    repliesElement.classList.add('replies');
+  
+    if (commentOrReply.replies) {
+        commentOrReply.replies.forEach(reply => {
+            const replyElement = createCommentOrReplyElement(reply);
+            repliesElement.appendChild(replyElement);
+        });
+    }
+  
+    const replyInputElement = document.createElement('input');
+    replyInputElement.type = 'text';
+    replyInputElement.placeholder = 'Répondre...';
+  
+    const replyButtonElement = document.createElement('button');
+    replyButtonElement.textContent = 'Répondre';
+    replyButtonElement.addEventListener('click', () => handleReply(commentOrReply.id, replyInputElement.value));
+  
+    element.appendChild(userElement);
+    element.appendChild(textElement);
+    element.appendChild(replyInputElement);
+    element.appendChild(replyButtonElement);
+    element.appendChild(repliesElement);
+  
+    return element;
+}
+
+// Add a comment to a message
+function handleComment(postId, commentText) {
+    if (commentText.trim() === '') return;
+  
+    loadFeedData().then(posts => {
+        const post = posts.find(p => p.id === postId);
+        if (!post.comments) post.comments = [];
+        const newComment = {
+            id: Date.now(),
+            user: "Cécile",
+            text: commentText,
+            replies: []
+        };
+        post.comments.push(newComment);
+        displayPosts(posts);
+        localStorage.setItem('feedData', JSON.stringify(posts));
+    });
+}
+
+  // Handle reply comment
+  function handleReply(commentId, replyText) {
+    if (replyText.trim() === '') return;
+  
+    loadFeedData().then(posts => {
+        // Find the comment and add the reply
+        function findCommentAndAddReply(comments) {
+            for (const comment of comments) {
+                if (comment.id === commentId) {
+                    if (!comment.replies) {
+                        comment.replies = [];
+                    }
+                    const newReply = {
+                        id: Date.now(),
+                        user: "Cécile1",
+                        text: replyText,
+                        replies: []
+                    };
+                    comment.replies.push(newReply);
+                    return true;
+                }
+                if (comment.replies && findCommentAndAddReply(comment.replies)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+  
+        // Find comment and add reply post
+        posts.forEach(post => {
+            if (post.comments) {
+            findCommentAndAddReply(post.comments);
+            }
+        });
+    
+        displayPosts(posts);
+        localStorage.setItem('feedData', JSON.stringify(posts));
     });
 }
 
