@@ -62,11 +62,13 @@ function createPostElement(post) {
   
     // Created and added, if image 
     if (post.content.image) {
-      const postImageElement = document.createElement('img');
-      postImageElement.src = `assets/img/feed/${post.content.image}`;
-      postImageElement.alt = "Image du post"; // Image attribute
-      postImageElement.classList.add('post-image');
-      postContentElement.appendChild(postImageElement); // Add image post
+        const postImageElement = document.createElement('img');
+        postImageElement.src = `assets/img/feed/${post.content.image}`;
+        postImageElement.alt = "Image du post"; // Image attribute
+        postImageElement.classList.add('post-image');
+        postContentElement.appendChild(postImageElement); // Add image post
+        //action post image full screen
+        postImageElement.addEventListener('click', () => showFullScreen(postImageElement.src));
     }
 
     // Will contain actions
@@ -80,7 +82,24 @@ function createPostElement(post) {
   
     return postElement;
 }
-
+// full screen image
+function showFullScreen(imageUrl) {
+    const fullScreenElement = document.createElement('div');
+    fullScreenElement.classList.add('full-screen');
+  
+    const fullScreenImageElement = document.createElement('img');
+    fullScreenImageElement.src = imageUrl;
+    fullScreenImageElement.classList.add('full-screen-image');
+  
+    const closeButtonElement = document.createElement('span');
+    closeButtonElement.classList.add('close-button');
+    closeButtonElement.innerHTML = '&times;';
+    closeButtonElement.addEventListener('click', () => fullScreenElement.remove());
+  
+    fullScreenElement.appendChild(fullScreenImageElement);
+    fullScreenElement.appendChild(closeButtonElement);
+    document.body.appendChild(fullScreenElement);
+}
 // Initialization and display
 export function displayFeed() {
     loadFeedData().then(posts => {
