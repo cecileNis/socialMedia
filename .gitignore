@@ -1,0 +1,32 @@
+# Dossiers et fichiers système
+.DS_Store
+Thumbs.db
+
+# Système et fichiers d'environnement
+.env
+.env.local
+.env.*.local
+
+# Cache et logs
+*.log
+.cache/
+
+# Ignorer les dossiers de build ou de distribution
+dist/
+build/
+
+# Dossier de configuration de l’IDE
+.vscode/
+.idea/
+
+# Ignorer les fichiers générés par le navigateur ou les outils de build
+*.temp
+*.tmp
+*.bak
+*.swp
+*.swo
+*.bak
+*.old
+
+# Ignorer le cache de certains outils de gestion de version
+*.lock
