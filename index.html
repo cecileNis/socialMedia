@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="css/menu.css">
         <link rel="stylesheet" href="css/feed.css">
         <link rel="stylesheet" href="css/messaging.css">
+        <link rel="stylesheet" href="css/friends.css">
     </head>
     <body>
         <header class="header">
@@ -15,6 +16,7 @@
                 <ul>
                     <li><a href="#feed" id="feedLink">Feed</a></li>
                     <li><a href="#messaging" id="messagingLink">Messagerie</a></li>
+                    <li><a href="#friends" id="friendsLink">Amis</a></li>
                 </ul>
             </nav>
         </header>
@@ -27,9 +29,17 @@
                 <h2>Messagerie</h2>
                 <div id="conversations"></div>
             </section> 
+            <section id="friends" class="page">
+                <h2>Liste d'Amis</h2>
+                <div class="friends-filter">
+                    <input type="text" id="search-friends" placeholder="Rechercher des amis...">
+                </div>
+                <div class="friends-list" id="friends-list"></div>
+            </section>
         </main>
         <script src="js/app.js" type="module"></script>
         <script src="js/feed.js" type="module"></script>
         <script src="js/messaging.js" type="module"></script>
+        <script src="js/friends.js" type="module"></script>
     </body>
 </html>

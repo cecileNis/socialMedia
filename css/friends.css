@@ -1,0 +1,39 @@
+.friends-list {
+    margin-top: 20px;
+}
+
+.friend-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    cursor: grab;
+}
+
+.friend-item:hover {
+    background-color: #e0e0e0;
+}
+
+.friend-item .name {
+    font-weight: bold;
+}
+
+.friend-item .message-link {
+    color: #252557;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.friend-item .friend-info .profile-pic{
+    width: 100px;
+    height: 100px;
+}
+
+.friends-filter input {
+    padding: 8px;
+    font-size: 1rem;
+    width: 300px;
+    margin-bottom: 15px;
+}  

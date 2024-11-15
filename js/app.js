@@ -18,6 +18,8 @@ function handleNavigation(event) {
     } else if (target.matches('#messagingLink')) {
         showPage('messaging');
         loadConversations(); // Load conversations
+    } else if (target.matches('#friendsLink')) {
+        showPage('friends');
     }
 }
 
