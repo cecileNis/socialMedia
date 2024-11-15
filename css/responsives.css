@@ -87,3 +87,10 @@
         width: 50%;
     }
 }
+
+
+@media (min-width: 1600px) {
+    h2.feedTitle, .posts-container .post {
+        width: 40%;
+    }
+}
