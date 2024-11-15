@@ -1,10 +1,3 @@
-#feed {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
 .posts-container {
     display: flex;
     flex-direction: column;
@@ -31,7 +24,7 @@
     align-items: center
 }
 
-.post .user-info span{
+.post .user-info span {
     font-size: large;
     color: #4c99af;
     font-weight: bold;
@@ -109,6 +102,62 @@
     width: 34px;
     height: 34px;
     vertical-align: middle;
+}
+
+.post .post-actions .reaction-btn img.icon-like, 
+.post .post-actions .reaction-btn img.icon-dislike {
+    filter: brightness(0.5);
+}
+
+.post .post-actions .reaction-btn img.icon-love {
+    filter: brightness(0.8);
+}
+
+.post .post-actions .reaction-btn:hover .icon-like,
+.post .post-actions .reaction-btn:hover .icon-dislike{
+    filter: brightness(1.4); 
+}
+
+.post .post-actions .reaction-btn:hover .icon-love {
+    filter: brightness(1.6); 
+}
+
+/* Action rotation*/
+.post .post-actions .reaction-btn:hover .icon-like {
+    transform: rotate(360deg); 
+}
+.reaction-btn:hover .icon-dislike {
+    transform: rotateY(180deg);
+}
+.reaction-btn .icon-dislike, .post .post-actions .reaction-btn .icon-like {
+    transition: transform 0.7s ease; 
+}
+.reaction-btn:hover .icon-love {
+    animation: heartbeat 1s infinite; 
+}
+/* beat effect */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2); 
+    }
+    50% {
+        transform: scale(1.4); 
+    }
+    75% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1); 
+    }
+}
+
+
+/* Pour l'image elle-même */
+.reaction-btn .icon-love {
+    transition: transform 0.3s ease;
 }
 
 .post .post-actions .actions-input{

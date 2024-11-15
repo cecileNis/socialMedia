@@ -64,3 +64,12 @@ h2{
     background: linear-gradient(45deg, #4c99af, #819ec7);
     color: #ffffff;
 }
+
+h3{
+    color: #4c99af;
+}
+
+
+.page{
+    padding: 20px;
+}

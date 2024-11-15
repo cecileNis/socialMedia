@@ -1,31 +1,22 @@
-#messaging{
-    background-color: #fbfbfb;
-    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1), -4px -4px 12px rgba(255, 255, 255, 0.6);
-    margin: 0 10px 0 10px;
-    padding: 5px;
+#conversations{
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-.conversation{
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-}
-
-.conversation .profile-pic{
+#conversations .conversation .profile-pic{
     width: 100px;
     height: 100px;
 }
 
 /* header */
-.conversation .conversation-header {
+#conversations .conversation {
     display: flex;
     align-items: center;
-}
-
-.conversation .conversation-header .conversation-info {
-    margin-left: 10px;
+    flex-direction: column;
+    align-self: center;
+    text-align: center;
 }
 
 .message-list {
@@ -33,16 +24,37 @@
 }
  
 .toggle-messages {
-    display: block;
-    padding: 5px 10px;
-    font-size: 14px;
-    cursor: pointer;
-    background-color: #073c74;
-    color: white;
-    border: none;
-    border-radius: 4px;
+    display: inline-block;
+}
+#conversations .conversation .send-message {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #abd4e0;
 }
 
-.toggle-messages:hover {
-    background-color: #0056b3;
+#conversations .conversation .send-message input{
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#conversations .conversation .send-message button {
+    padding: 10px 20px;
+    width: 100%;
+}
+
+#conversations .conversation .message-list .message-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+#conversations .conversation .message-list .message-header span {
+    font-size: 14px;
+}
+
+#conversations .conversation .message-list .message-header .timestamp {
+    font-size: 12px; 
+    color: #888; 
 }
