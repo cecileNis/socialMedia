@@ -8,21 +8,33 @@
 .posts-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
+
 /* Post */
 .post {
     padding: 20px;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
+
+.post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
  /* User info */
  .post .user-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.post .user-info span{
+    font-size: large;
+    color: #4c99af;
+    font-weight: bold;
 }
 
 /* fixed profil image size */
@@ -31,10 +43,15 @@
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
+    margin-bottom: 12px;
 }
 
 .post .post-content {
     margin-bottom: 10px;
+    text-align: center;
+}
+.post .post-content p{
+    font-size: 14px;
 }
 /* fixed post image size */
 .post .post-content .post-image {
@@ -42,6 +59,7 @@
   height: 200px;
   object-fit: cover;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 /* Post image fullscreen */
@@ -59,13 +77,13 @@
 }
 
 .full-screen img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 95%;
+    max-height: 95%;
 }
 
 .full-screen .close-button {
     position: absolute;
-    top: 50px;
+    top: 10%;
     right: 20px;
     font-size: 3rem;
     color: #fff;
@@ -73,61 +91,60 @@
 }
 
 /* Post actions */
-.post-actions .reaction-btn {
+.post .post-actions{
+    text-align: center;
+}
+
+.post .post-actions .reaction-btn {
     display: inline-flex;
-    background-color: transparent;
+    background: transparent;
     box-shadow: none;
     align-items: center;
     justify-content: center;
-    padding: 0 10px 0 15px;
+    color: #181818;
+    padding: 0 10px;
 }
-.post-actions .reaction-btn img {
+
+.post .post-actions .reaction-btn img {
     width: 34px;
     height: 34px;
     vertical-align: middle;
 }
 
-.post-actions .actions-input button {
-    padding: 5px 10px;
-    background-color: #024704;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: background-color 0.5s ease;
-    margin-left: 10px;
-}
-  
-.post-actions .actions-input button:hover {
-    background-color: #4CAF50;
+.post .post-actions .actions-input{
+    border-bottom: 1px solid #e0dfdf;
+    padding: 14px 0;
 }
 
+.post .post-actions .actions-input input, .post .post-actions .actions-input button {
+    width: 70%;
+}
+
+
 /* Comments and replies style */
-.comment-or-reply {
-    margin-bottom: 10px;
-    padding-left: 10px;
+.post .post-comments .comment-or-reply {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px; 
+}
+
+.post .post-comments .comment-or-reply .user {
+    font-weight: 600;
+}
+
+.post .post-comments .comment-or-reply .user, .post .post-comments .comment-or-reply p.text {
+    display: inline-block;
+    margin: 0;
 }
 
 /* Specific style for answers */
-.comment-or-reply .replies .comment-or-reply {
+.post .post-comments .comment-or-reply .replies .comment-or-reply {
     margin-left: 20px; /* Shift of responses */
     font-style: italic;
 }
 
-/* Space between buttons and text fields */
-.comment-or-reply input[type="text"] {
-    margin-right: 10px;
+.post .post-comments .comment-or-reply input[type="text"],
+.post .post-comments .comment-or-reply button {
+    margin: 5px 0;
 }
 
-.comment-or-reply button {
-    background-color: #024704;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: background-color 0.5s ease;
-}
-
-.comment-or-reply button:hover {
-    background-color: #45a049;
-}

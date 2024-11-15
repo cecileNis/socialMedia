@@ -19,20 +19,48 @@ body{
 
 /* Boutons */
 button, .button {
-    padding: 12px 20px;
-    background-color: #e0e0e0;
+    padding: 5px 10px;
+    background: linear-gradient(45deg, #4c99af, #819ec7);
     border: none;
-    border-radius: 20px;
+    border-radius: 8px;
     cursor: pointer;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
+    color: white;
+    font-weight: bold;
 }
 
 button:hover, .button:hover {
-    transform: scale(1.05);
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2), -4px -4px 15px rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 button:focus, .button:focus {
     outline: none;
+}
+
+input{
+    border-radius: 4px;
+    border: 1px solid #e7e7e7;
+    padding: 3px;
+}
+
+.post, .friend-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* title page */
+h2{
+    text-align: center;
+    background: linear-gradient(45deg, #4c99af, #819ec7);
+    color: #ffffff;
 }

@@ -11,7 +11,6 @@ const userImages = {
 // Function to get profile photo path
 function getUserImage(sender) {
     const imagePath = `assets/img/messaging/${userImages[sender] || "utilisateurs.jpeg"}`;
-    console.log(`Sender: ${sender}, Image Path: ${imagePath}`);
     return imagePath;
 }
 

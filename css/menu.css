@@ -1,13 +1,17 @@
 /* Header */
 .header {
-    background-color: #fff;
-    padding: 20px 0;
+    background: #ffff;
+    padding: 15px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
+.header .navbar p{
+    font-size: 1.5em;
+    text-align: center;
+}
 .navbar ul {
     list-style-type: none;
     display: flex;
@@ -27,4 +31,10 @@
 
 .navbar ul li a:hover {
     color: #007BFF;
+}
+
+.navbar ul li a.active {
+    color: #4c99af; 
+    font-weight: bold;
+    border-bottom: 2px solid #4c99af;
 }
