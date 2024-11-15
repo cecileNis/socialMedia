@@ -5,6 +5,7 @@
 }
 
 @media (min-width: 768px) {
+
     /* menu */
     .header .navbar{
         display: flex;
@@ -25,13 +26,7 @@
         padding: 20px;
         margin-bottom: 5px;
     }
-    /* img feed full screen*/
-    .full-screen {
-        top: 12%; 
-    }
-    .full-screen .close-button {
-        top: 0; 
-    }
+   
     .full-screen img {
         max-width: 100%;
         max-height: 100%;
