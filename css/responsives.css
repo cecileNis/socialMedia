@@ -39,16 +39,27 @@
 
 
 @media (min-width: 992px) {
-    h2.feedTitle {
+    h2.feedTitle{
         width: 60%;
         margin: 0 auto;
     }
-    /* feed*/
-    .posts-container {
+    h2.messagingTitle, h2.friendListTitle{
+        width: 80%;
+        margin: 0 auto;
+    }
+   
+    #conversations, #friends .friendly {
+        padding: 10px;
+        width: 80%;
+        margin: auto;
+    } 
+
+     /* feed*/
+     .posts-container {
         align-items: center;
     }
 
-    .posts-container .post{
+    .posts-container .post {
         padding: 10px;
         width: 60%;
     } 
@@ -67,7 +78,6 @@
         display: grid;
         grid-template-columns:  repeat(2, 1fr);
         gap: 20px;
-
     }
 
     #conversations .conversation {
@@ -83,14 +93,71 @@
 
 
 @media (min-width: 1200px) {
-    h2.feedTitle, .posts-container .post {
-        width: 50%;
+    h2.messagingTitle, h2.friendListTitle{
+        width: 70%;
+        margin: 0 auto;
+    }
+   
+    #conversations, #friends .friendly {
+        padding: 10px;
+        width: 70%;
+        margin: auto;
+    } 
+}
+
+@media (min-width: 1400px) {
+    h2.messagingTitle, h2.friendListTitle{
+        width: 60%;
+        margin: 0 auto;
+    }
+   
+    #conversations, #friends .friendly {
+        padding: 10px;
+        width: 60%;
+        margin: auto;
+    } 
+}
+
+@media (min-width: 1600px) {
+    h2.feedTitle{
+        width: 40%;
+        margin: 0 auto;
+    }
+    h2.messagingTitle, h2.friendListTitle{
+        width: 45%;
+        margin: 0 auto;
+    }
+   
+    #conversations, #friends .friendly {
+        padding: 10px;
+        width: 45%;
+        margin: auto;
+    } 
+    /* feed */
+    .posts-container .post {
+        padding: 10px;
+        width: 40%;
     }
 }
 
-
-@media (min-width: 1600px) {
-    h2.feedTitle, .posts-container .post {
+@media (min-width: 2000px) {
+    h2.feedTitle{
+        width: 30%;
+        margin: 0 auto;
+    }
+    h2.messagingTitle, h2.friendListTitle{
         width: 40%;
+        margin: 0 auto;
+    }
+   
+    #conversations, #friends .friendly {
+        padding: 10px;
+        width: 40%;
+        margin: auto;
+    } 
+    /* feed */
+    .posts-container .post {
+        padding: 10px;
+        width: 30%;
     }
 }
