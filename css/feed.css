@@ -76,7 +76,7 @@
 
 .full-screen .close-button {
     position: absolute;
-    top: 10%;
+    top: 12%;
     right: 20px;
     font-size: 3rem;
     color: #fff;
@@ -163,6 +163,7 @@
 .post .post-actions .actions-input{
     border-bottom: 1px solid #e0dfdf;
     padding: 14px 0;
+    margin-bottom: 14px;
 }
 
 .post .post-actions .actions-input input, .post .post-actions .actions-input button {

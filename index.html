@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/feed.css">
         <link rel="stylesheet" href="css/messaging.css">
         <link rel="stylesheet" href="css/friends.css">
+        <link rel="stylesheet" href="css/responsives.css">
     </head>
     <body>
         <header class="header">
@@ -23,7 +24,7 @@
         </header>
         <main id="app">
             <section id="feed" class="page">
-                <h2>Fil d'Actualités</h2>
+                <h2 class="feedTitle">Fil d'Actualités</h2>
                 <div class="posts-container"></div>
             </section>
             <section id="messaging" class="page">
@@ -32,10 +33,12 @@
             </section> 
             <section id="friends" class="page">
                 <h2>Liste d'Amis</h2>
-                <div class="friends-filter">
-                    <input type="text" id="search-friends" placeholder="Rechercher des amis...">
+                <div class="friendly">
+                    <div class="friends-filter">
+                        <input type="text" id="search-friends" placeholder="Rechercher des amis...">
+                    </div>
+                    <div class="friends-list" id="friends-list"></div>
                 </div>
-                <div class="friends-list" id="friends-list"></div>
             </section>
         </main>
         <script src="js/app.js" type="module"></script>

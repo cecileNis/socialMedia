@@ -1,13 +1,15 @@
-.friends-list {
-    margin-top: 20px;
+.friendly{
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .friends-list .friend-item {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     padding: 10px;
-    margin: 5px;
+    margin-bottom: 10px;
     background-color: #f1f1f1;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -26,20 +28,27 @@
 }
 
 .friends-list .friend-item .message-link {
-    color: #252557;
+    color: #888;
     text-decoration: none;
     font-size: 0.9rem;
+    padding: 5px 0;
+    text-align: center;
 }
+
+.friends-list .friend-item .message-link:hover {
+    color: #819ec7;
+}
+
 
 .friends-list .friend-item .friend-info{
     display: flex;
     align-items: center;
-    align-self: center;
+    justify-content: space-around;
 }
 
 .friends-list .friend-item .friend-info .profile-pic{
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     margin-right: 10px;
 }
@@ -53,7 +62,7 @@
 .friends-filter input {
     padding: 8px;
     font-size: 1rem;
-    width: 300px;
+    width: 100%;
     margin-bottom: 15px;
 }
 
@@ -63,5 +72,7 @@
 
 .no-results {
     font-style: italic;
-    color: #252557;
+    color: #819ec7;
+    font-weight: bold;
+    text-align: center;
 }

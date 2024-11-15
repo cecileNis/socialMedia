@@ -26,6 +26,7 @@
 .toggle-messages {
     display: inline-block;
 }
+
 #conversations .conversation .send-message {
     margin-bottom: 10px;
     padding-bottom: 10px;

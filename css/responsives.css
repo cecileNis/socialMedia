@@ -1,0 +1,95 @@
+@media (min-width: 425px) {
+    .full-screen .close-button {
+        top: 10%; 
+    }
+}
+
+@media (min-width: 768px) {
+    /* menu */
+    .header .navbar{
+        display: flex;
+        justify-content: space-around;
+    }
+    /* feed */
+    .post {
+        padding: 20px 60px;
+    }
+    .post .post-main-content {
+        display: flex;
+        justify-content: space-around;
+    }
+    .post .post-actions .actions-input input, .post .post-actions .actions-input button {
+        width: 100%;
+    }
+    .post .post-actions .actions-input input {
+        padding: 20px;
+        margin-bottom: 5px;
+    }
+    /* img feed full screen*/
+    .full-screen {
+        top: 12%; 
+    }
+    .full-screen .close-button {
+        top: 0; 
+    }
+    .full-screen img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    /* Friends */
+    .friends-list .friend-item {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+
+@media (min-width: 992px) {
+    h2.feedTitle {
+        width: 60%;
+        margin: 0 auto;
+    }
+    /* feed*/
+    .posts-container {
+        align-items: center;
+    }
+
+    .posts-container .post{
+        padding: 10px;
+        width: 60%;
+    } 
+    
+    .post .post-main-content {
+        align-items: center;
+    }
+
+    .post .user-info .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* messaging */
+    #conversations{
+        display: grid;
+        grid-template-columns:  repeat(2, 1fr);
+        gap: 20px;
+
+    }
+
+    #conversations .conversation {
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 8px;
+        background-color: #f9f9f9; 
+    } 
+    #conversations .conversation .send-message {
+        border-bottom: none;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    h2.feedTitle, .posts-container .post {
+        width: 50%;
+    }
+}

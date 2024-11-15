@@ -109,7 +109,7 @@ function createPostElement(post) {
     commentInputContainer.appendChild(commentButtonElement);
   
     postActionsElement.appendChild(commentInputContainer);
-  
+
     const postCommentsElement = document.createElement('div');
     postCommentsElement.classList.add('post-comments');
   
@@ -121,9 +121,14 @@ function createPostElement(post) {
         });
     }
 
+    //create div post-main-content
+    const postmainContent = document.createElement('div');
+    postmainContent.classList.add('post-main-content');
+    postmainContent.appendChild(userInfoElement);
+    postmainContent.appendChild(postContentElement);
+   
     // Add info, content, action
-    postElement.appendChild(userInfoElement); 
-    postElement.appendChild(postContentElement);
+    postElement.appendChild(postmainContent);
     postElement.appendChild(postActionsElement);
     postElement.appendChild(postCommentsElement);
   
