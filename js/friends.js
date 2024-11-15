@@ -1,3 +1,7 @@
+// friends.js
+import { showPage } from './app.js';
+import { loadConversations } from './messaging.js';
+
 // Friends list
 const defaultFriendsData = [
     { id: 1, firstName: "Audrey", lastName: "Dupont", profilePicture: "audrey.jpeg" },
@@ -6,7 +10,7 @@ const defaultFriendsData = [
     { id: 4, firstName: "Lyse", lastName: "Lefèvre", profilePicture: "lyse.jpeg" }
 ];
 
-// Load friends 
+// Load friends
 const savedFriends = localStorage.getItem("friendsData");
 let friendsData = savedFriends ? JSON.parse(savedFriends) : [...defaultFriendsData];
 
@@ -43,6 +47,13 @@ function renderFriendsList(friends) {
         friendElement.addEventListener("dragend", onDragEnd);
         friendElement.addEventListener("dragover", onDragOver);
         friendElement.addEventListener("drop", onDrop);
+
+        // Add event listener for message link
+        friendElement.querySelector(".message-link").addEventListener("click", function(event) {
+            event.preventDefault();
+            showPage("messaging");
+            loadConversations();
+        });
     });
 }
 

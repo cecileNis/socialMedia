@@ -1,7 +1,7 @@
 import { displayFeed } from './feed.js';
 import { loadConversations } from './messaging.js';
 
-function showPage(pageId) {
+export function showPage(pageId) {
   const sections = document.querySelectorAll('.page');
   sections.forEach(section => section.classList.add('hidden'));
   document.getElementById(pageId).classList.remove('hidden');
